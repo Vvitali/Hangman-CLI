@@ -1,8 +1,6 @@
-console.log("letter.js")
-var DEBUG = false;
+  
 function Letter(innerLetter){
-	DEBUG && console.log("l:"+innerLetter);
-	this.state = "_";
+	this.state = "|";
 	this.letter = innerLetter;
 }
 

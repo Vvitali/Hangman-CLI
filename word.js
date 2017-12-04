@@ -1,4 +1,3 @@
-console.log("word.js")
 var Letter = require("./letter.js");
 module.exports = Word;
 function Word(wordd) {
@@ -12,6 +11,15 @@ Word.prototype.show =function(){
 		tempWord+=  this.massive[index].state;
 	}
 	console.log(tempWord);
+}
+Word.prototype.checkaLetter = function(userLetter){
+	var index =this.word.indexOf(userLetter) + 1
+	if( index  ){
+		console.log("good!")
+		word.massive[index].activate();
+	}else{
+		console.log("no such letter in the word!")
+	}
 }
 Word.prototype.initializing = function(){
 	for(var index in this.word){
