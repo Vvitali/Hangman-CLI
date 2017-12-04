@@ -1,4 +1,4 @@
-  
+module.exports = Letter;
 function Letter(innerLetter){
 	this.state = "|";
 	this.letter = innerLetter;
@@ -7,5 +7,3 @@ function Letter(innerLetter){
 Letter.prototype.activate = function(){
 	this.state = this.letter;
 } 
-
-module.exports = Letter;

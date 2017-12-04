@@ -5,27 +5,32 @@ var Word = require("./word.js")
 var wordlist = ["word", "mother", "dog", "english", "aluminium", "music", "advertisement"];
 var attempts = 10;
 console.log("\nHello %username%!\n")
+var word = new Word(wordlist[Math.floor(Math.random()*(wordlist.length-1))]);
+
+function question(){
+	console.log("Attempts: "+ attempts);
+	inquirer.prompt([
+	{
+		type:"input",
+		name: "userInput",
+		message: "Guess a letter!",
+	}
+	]).then(answers => {	
+		word.checkaLetter(answers.userInput)
+		word.show();
+		if(attempts >0){
+			if(word.length==0){
+				console.log("Congratulations!");
+			}else{
+				question();
+			}
+		}
+	});
+}
 
 function game(){
-	var word = new Word(wordlist[Math.floor(Math.random()*(wordlist.length-1))]);
 	word.initializing();
 	console.log("Guess the word!");
-	word.show();
-	for(var i = 10; i>0; i--){
-		console.log("Attempts: "+ i);
-		inquirer.prompt([
-		{
-			type:"input",
-			name: "userInput",
-			message: "Guess a letter!",
-		}
-		]).then(answers => {
-			console.log(answers.userInput); 
-			word.checkaLetter(answers.userInput)
-			word.show();
-		});
-	}
-	
-
+	question();	
 }
 game();

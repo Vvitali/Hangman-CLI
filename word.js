@@ -3,6 +3,7 @@ module.exports = Word;
 function Word(wordd) {
 	this.word = wordd;
 	this.massive = [];
+	this.length = this.word.length;
 }
 
 Word.prototype.show =function(){
@@ -16,9 +17,10 @@ Word.prototype.checkaLetter = function(userLetter){
 	var index =this.word.indexOf(userLetter) + 1
 	if( index  ){
 		console.log("good!")
-		word.massive[index].activate();
+		this.massive[index-1].activate();
+		this.length--;
 	}else{
-		console.log("no such letter in the word!")
+		console.log("No such letter in the word!")
 	}
 }
 Word.prototype.initializing = function(){
