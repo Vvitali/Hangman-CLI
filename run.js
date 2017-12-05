@@ -2,8 +2,7 @@ var DEBUG = true;
 DEBUG && console.log("Started:run.js");
 var inquirer = require("inquirer");
 var Word = require("./word.js")
-var wordlist = ["aluminium"];
-//var wordlist = ["word", "mother", "dog", "english", "aluminium", "music", "advertisement"];
+var wordlist = ["word", "mother", "dog", "english", "aluminium", "music", "advertisement"];
 var attempts = 10;
 console.log("\nHello %username%!\n")
 var word = new Word(wordlist[Math.floor(Math.random()*(wordlist.length-1))]);
