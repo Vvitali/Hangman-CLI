@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/Vvitali/Hangman-CLI/issues"
   },
+  "scripts" : { "start": "node run.js"},
   "homepage": "https://github.com/Vvitali/Hangman-CLI#readme"
 }

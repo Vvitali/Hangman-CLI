@@ -16,7 +16,7 @@ function question(){
 		message: "Guess a letter!",
 	}
 	]).then(function(answers) {	
-		word.checkaLetter(answers.userInput)
+		word.checkaLetter(answers.userInput) && attempts--;
 		word.show();
 		if(attempts >0){
 			if(word.length==0){
@@ -30,7 +30,7 @@ function question(){
 			oneMoreGame();
 		}
 	});
-	attempts--;
+	
 }
 
 function oneMoreGame(){
