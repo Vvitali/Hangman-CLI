@@ -1,6 +1,6 @@
 module.exports = Letter;
 function Letter(innerLetter){
-	this.state = "_";
+	this.state = "_ ";
 	this.letter = innerLetter;
 }
 

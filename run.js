@@ -20,7 +20,7 @@ function question(){
 		word.show();
 		if(attempts >0){
 			if(word.length==0){
-				console.log("Congratulations! The word is '"+ word.word+"'");
+				console.log("Congratulations! The word is '" + word.word + "'");
 				oneMoreGame();
 			}else{
 				question();

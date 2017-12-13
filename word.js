@@ -14,12 +14,13 @@ Word.prototype.show =function(){
 	console.log(tempWord);
 }
 Word.prototype.checkaLetter = function(userLetter){
-	var index =this.word.indexOf(userLetter) + 1
+	
+	var index =this.word.indexOf(userLetter) + 1;
 	if( index  ){
 		console.log("Right!")
 		this.indexesOfLetter(userLetter);
 	}else{
-		console.log("No such letter in the word!")
+		console.log("No such letter in the word!");
 	}
 }
 Word.prototype.initializing = function(){
@@ -30,20 +31,22 @@ Word.prototype.initializing = function(){
 
 Word.prototype.indexesOfLetter = function(letter){
 	var indexes = [];
-
-	for (var i = 0; i < this.word.length; i++)
+	console.log("cindexesOfLetter:"+ letter);
+	for (var i = 0; i < this.word.length; i++){
 		if (this.word[i] === letter) {
 			if(this.word[i]==this.massive[i].state)	{
 				console.log("You already guessed this letter!");
 				return 0;
 			}
 			indexes.push(i);
-
 		}
-
-		for(var i = 0; i<indexes.length && this.massive[indexes[i]].state=="_" ; i++){
-			this.length--;
-			this.massive[indexes[i]].activate();
-		}
-		return indexes;
 	}
+	console.log(indexes);
+
+	for(var i = 0; i<indexes.length && this.massive[indexes[i]].state=="_ " ; i++){
+		this.length--;
+		console.log("Index: "+i)
+		this.massive[indexes[i]].activate();
+	}
+	return indexes;
+}
