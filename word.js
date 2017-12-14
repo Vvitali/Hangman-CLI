@@ -19,7 +19,8 @@ Word.prototype.checkaLetter = function(userLetter){
 	var index =this.word.indexOf(userLetter) + 1;
 	if( index  ){
 		console.log("Right!")
-		return this.indexesOfLetter(userLetter);
+		this.indexesOfLetter(userLetter);
+		return 0;
 	}else{
 		console.log("No such letter in the word!");
 		
